@@ -1,0 +1,118 @@
+/* Сбрасываем отступы и размеры у всех элементов */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* Стилизация всего body */
+body { 
+    height: 100vh; /* Высота на весь экран */
+    display: flex; /* Центрируем контейнер */
+    justify-content: center; 
+    align-items: center; 
+    font-family: Arial, sans-serif; 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Красивый градиент */
+}
+
+/* Основной контейнер приложения */
+.container { 
+    width: 400px; 
+    padding: 30px; 
+    background: #00003D; /* Темный фон */
+    border-radius: 20px; 
+    text-align: center; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3); /* Тень для объема */
+}
+
+/* Контейнер с кнопками режимов */
+.timer-container { 
+    display: flex; 
+    justify-content: space-around; /* Равномерно распределяем кнопки */
+    margin-bottom: 20px; 
+}
+/* Стили всех кнопок режимов */
+.timer-container button { 
+    padding: 12px 20px; 
+    border: none; 
+    border-radius: 10px; 
+    color: white; 
+    font-weight: bold; 
+    background: #f3486d; /* Розово-красный цвет */
+    cursor: pointer; 
+    transition: all 0.3s; /* Плавные анимации */
+}
+/* Hover-эффект для кнопок режимов */
+.timer-container button:hover { 
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+/* Активная кнопка (выбранный режим) */
+.timer-container .active { 
+    background: #db2a34; /* Более яркий красный */
+}
+
+/* Счетчик завершенных сессий */
+.pomodoro-count { 
+    color: white; 
+    font-size: 24px; 
+    margin-bottom: 20px; 
+}
+
+/* Внешний круг прогресс-бара */
+.progressbar { 
+    width: 200px; 
+    height: 200px; 
+    background: conic-gradient(#f3486d 0deg, crimson 0deg); /* Градиентный круг */
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 0 auto 30px; 
+}
+
+/* Внутренний круг (фон для цифр времени) */
+.progress-inner { 
+    width: 90%; 
+    height: 90%; 
+    background: #03033f; /* Очень темный синий */
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* Цифры времени MM:SS */
+#timerDisplay { 
+    color: white; 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+}
+
+/* Контейнер кнопок управления */
+.controls button { 
+    padding: 12px 24px; 
+    margin: 0 10px; 
+    border: none; 
+    border-radius: 10px; 
+    color: white; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: all 0.3s; 
+}
+
+/* Цвета кнопок управления */
+#startBtn { background: #4CAF50; } /* Зеленый */
+#pauseBtn { background: #db2a34; }  /* Красный */
+#resetBtn { background: #ffa600; }  /* Оранжевый */
+
+/* Hover для кнопок управления */
+.controls button:hover { 
+    transform: scale(1.05); 
+}
+
+/* Анимация пульсации прогресс-бара */
+@keyframes pulse { 
+    0%, 100% { transform: scale(0.98); } 
+    50% { transform: scale(1); } 
+}
